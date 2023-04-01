@@ -1,0 +1,56 @@
+modLoader="javafml"
+
+loaderVersion="[44,)"
+
+license="GNU General Public License"
+
+[[mods]]
+
+modId="coffeereloaded"
+
+version="${file.jarVersion}"
+
+displayName="CoffeeReloaded"
+
+logoFile="CoffeeReloaded.png"
+
+credits="Credits to the MinecraftForge team for allowing this project to happen!"
+
+authors="Voice"
+
+description='''
+A minecraft mod that registers random items, blocks, entities, and more!
+'''
+
+[[dependencies.coffeereloaded]]
+    modId="forge"
+
+    mandatory=true
+
+    versionRange="[44,)"
+
+    ordering="NONE"
+
+    side="BOTH"
+
+[[dependencies.coffeereloaded]]
+    modId="geckolib"
+
+    mandatory=true
+
+    versionRange="[4.1.2,)"
+
+    ordering="NONE"
+
+    side="BOTH"
+
+[[dependencies.coffeereloaded]]
+    modId="minecraft"
+
+    mandatory=true
+
+    versionRange="[1.19.3,1.20)"
+
+    ordering="NONE"
+
+    side="BOTH"

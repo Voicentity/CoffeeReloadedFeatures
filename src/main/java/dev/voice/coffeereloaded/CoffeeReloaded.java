@@ -2,9 +2,7 @@ package dev.voice.coffeereloaded;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.client.renderer.entity.EntityRenderers;
-
-import net.minecraft.world.item.CreativeModeTabs;
+import dev.voice.coffeereloaded.network.Messages;
 
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -23,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import org.jetbrains.annotations.NotNull;
+
 import org.slf4j.Logger;
 
 @Mod(CoffeeReloaded.MODID)
@@ -31,7 +31,7 @@ public class CoffeeReloaded {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public TutorialMod() {
+    public CoffeeReloaded() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(this::commonSetup);
@@ -41,8 +41,12 @@ public class CoffeeReloaded {
         bus.addListener(this::addCreative);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(@NotNull final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
 
+        });
+
+        Messages.register();
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
