@@ -1,7 +1,8 @@
 package dev.voice.coffeereloaded.network;
 
 import dev.voice.coffeereloaded.CoffeeReloaded;
-import dev.voice.coffeereloaded.network.packet.ClientToServerPacket;
+import dev.voice.coffeereloaded.network.packet.CreativeModePopupS2C;
+import dev.voice.coffeereloaded.network.packet.PopupRequestC2S;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -29,10 +30,16 @@ public class Messages {
 
         INSTANCE = net;
 
-        net.messageBuilder(ClientToServerPacket.class, getId(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(ClientToServerPacket::new)
-                .encoder(ClientToServerPacket::toBytes)
-                .consumerMainThread(ClientToServerPacket::handle)
+        net.messageBuilder(PopupRequestC2S.class, getId(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(PopupRequestC2S::new)
+                .encoder(PopupRequestC2S::toBytes)
+                .consumerMainThread(PopupRequestC2S::handle)
+                .add();
+        
+        net.messageBuilder(CreativeModePopupS2C.class, getId(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(CreativeModePopupS2C::new)
+                .encoder(CreativeModePopupS2C::toBytes)
+                .consumerMainThread(CreativeModePopupS2C::handle)
                 .add();
     }
 
