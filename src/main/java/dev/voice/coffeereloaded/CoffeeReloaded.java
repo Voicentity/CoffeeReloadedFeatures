@@ -2,6 +2,7 @@ package dev.voice.coffeereloaded;
 
 import com.mojang.logging.LogUtils;
 
+import com.mojang.realmsclient.gui.ErrorCallback;
 import dev.voice.coffeereloaded.network.Messages;
 
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,7 +30,7 @@ import org.slf4j.Logger;
 public class CoffeeReloaded {
     public static final String MODID = "coffeereloaded";
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public CoffeeReloaded() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
