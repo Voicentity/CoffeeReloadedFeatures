@@ -2,7 +2,7 @@ package dev.voice.coffeereloaded.event;
 
 import dev.voice.coffeereloaded.CoffeeReloaded;
 import dev.voice.coffeereloaded.network.Messages;
-import dev.voice.coffeereloaded.network.packet.ClientToServerPacket;
+import dev.voice.coffeereloaded.network.packet.PopupRequestC2S;
 import dev.voice.coffeereloaded.util.KeyBinds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.Minecraft;
@@ -28,7 +28,7 @@ public class ClientEvents {
 
                 Minecraft.getInstance().player.sendSystemMessage(Component.literal("pressed the b key"));
 
-                Messages.sendToServer(new ClientToServerPacket());
+                Messages.sendToServer(new PopupRequestC2S());
             }
         }
     }
