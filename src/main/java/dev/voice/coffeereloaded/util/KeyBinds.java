@@ -12,4 +12,8 @@ public class KeyBinds {
 
     public static final KeyMapping OPEN_TAB_KEY = new KeyMapping(KEY_OPEN_TAB, KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, 98, KEY_CATEGORY_TABS);
+    
+    private KeyBinds() {
+        throw new UnsupportedOperationException();
+    }
 }

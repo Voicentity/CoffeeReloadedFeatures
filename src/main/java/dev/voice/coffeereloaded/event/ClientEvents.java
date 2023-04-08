@@ -14,8 +14,16 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
 public class ClientEvents {
+    private ClientEvents() {
+        throw new UnsupportedOperationException();
+    }
+    
     @Mod.EventBusSubscriber(modid = CoffeeReloaded.MODID, value = Dist.CLIENT)
     public static class ClientForgeEvent {
+        private ClientForgeEvent() {
+            throw new UnsupportedOperationException();
+        }
+        
         @SubscribeEvent
         public static void onKeyRegister(@NotNull RegisterKeyMappingsEvent event) {
             event.register(KeyBinds.OPEN_TAB_KEY);

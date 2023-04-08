@@ -2,7 +2,6 @@ package dev.voice.coffeereloaded;
 
 import com.mojang.logging.LogUtils;
 
-import com.mojang.realmsclient.gui.ErrorCallback;
 import dev.voice.coffeereloaded.network.Messages;
 
 import net.minecraftforge.api.distmarker.Dist;
@@ -51,14 +50,18 @@ public class CoffeeReloaded {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-
+        throw new UnsupportedOperationException();
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
+    public static class Client {
+        private Client() {
+            throw new UnsupportedOperationException();
+        }
+        
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            throw new UnsupportedOperationException();
         }
     }
 }
